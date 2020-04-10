@@ -8,7 +8,7 @@ function App() {
     <div>
       <h1>App.js rendered</h1>
       <Router>
-        <Route exact path="/users" component = {Homepage} />
+        <Route exact path="/allusers" component = {Homepage} />
       </Router>
     </div>
   );
