@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 
 class Homepage extends Component{
-    state = {cities: []}
+    state = {users: []}
   
-    async componentDidMount() {
-        const response = await fetch('/api')
-        const cities   = await response.json()
-        console.log(response, "HIII")
-        this.setState({cities: cities})
+    componentDidMount() {
+        fetch('/users')
+        .then(res => res.json())
+        .then(users => this.setState({ users }));
     }
 
     render(){
         return(
             <div>
-                 <ul>
-                {this.state.cities.map( city => {
-                    return <li key={city.name}> <b>{city.username}</b></li>
+                <h2>Homepage rendered</h2>
+                <ul>
+                {this.state.users.map( city => {
+                    return <li key={city.name}>{city.username}</li>
                 })}
                 </ul>
             </div>
