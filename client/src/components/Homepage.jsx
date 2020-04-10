@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+/**
+ * Note: The route "/users" fetches the API json response from the PostgreSQL DB 
+ */
 class Homepage extends Component{
     state = {users: []}
   

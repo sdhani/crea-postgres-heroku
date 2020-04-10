@@ -15,3 +15,9 @@ function App() {
 }
 
 export default App;
+/**
+ * Note:
+ *  - The route "/allusers" hits the create react route
+ *  - The route "/users" hits the server API route
+ *  - AVOID same route names bt frontend routes and express routes bcs the site is hosting both on the same url
+ */

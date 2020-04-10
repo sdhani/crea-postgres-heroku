@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv').config();
-const queries = require('./controllers/users');
 
 const app = express();
 
@@ -20,16 +19,7 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
 
-// app.use("/users", apiRouter);
-
-app.get("/users", async (req, res) => {
-	try {
-		queries.getAllUsers().then(users => {
-			res.status(200).json(users);
-		});
-	}
-  catch(err) { console.log(err); }
-});
+app.use("/users", apiRouter);
 
 
 // The "catchall" handler: for any request that doesn't
@@ -37,6 +27,7 @@ app.get("/users", async (req, res) => {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
+
 
 app.set('port', (process.env.PORT || 3001));
 app.listen(app.get('port'), () => {
