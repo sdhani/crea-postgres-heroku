@@ -14,8 +14,8 @@ class Homepage extends Component{
             <div>
                 <h2>Homepage rendered</h2>
                 <ul>
-                {this.state.users.map( city => {
-                    return <li key={city.name}>{city.username}</li>
+                {this.state.users.map(user => {
+                    return <li key={user.id}>{user.username}</li>
                 })}
                 </ul>
             </div>

@@ -4,13 +4,14 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv').config();
+const queries = require('./controllers/users');
 
 const app = express();
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-const apiRouter = require("./routes/users");
+// const apiRouter = require("./routes/users");
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -19,7 +20,17 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use("/users", apiRouter);
+// app.use("/users", apiRouter);
+
+app.get("/users", async (req, res) => {
+	try {
+		queries.getAllUsers().then(users => {
+			res.status(200).json(users);
+		});
+	}
+  catch(err) { console.log(err); }
+});
+
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
