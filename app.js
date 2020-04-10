@@ -4,12 +4,14 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv').config();
-const staticFiles = express.static(path.join(__dirname, '../../client/build'));/* Added to serve up react project; get reference to the client build directory */
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
-const apiRouter = require("./routes/users");
-
 const app = express();
+
+// // Serve static files from the React app
+// app.use(express.static(path.join(__dirname, 'client/build')));
+
+const apiRouter = require("./routes/users");
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -27,9 +29,14 @@ app.use(
   })
 );
 
-
 app.use("/", apiRouter);
-app.use(staticFiles);
+// app.use(staticFiles);
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
 
 app.set('port', (process.env.PORT || 3001));
 app.listen(app.get('port'), () => {
