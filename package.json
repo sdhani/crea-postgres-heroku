@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon app.js",
-    "start-all": "concurrently \"cd client && yarn start\" \"PORT=3001 yarn start\""
+    "start-all": "concurrently \"cd client && yarn start\" \"PORT=3001 yarn start\"",
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
