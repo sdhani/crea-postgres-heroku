@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv').config();
-const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const app = express();
 
@@ -19,24 +18,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(
-  createProxyMiddleware("/api", {
-    target: "http://localhost:3001",
-    pathRewrite: {
-      "^/api": "/"
-    },
-    changeOrigin: true
-  })
-);
 
-app.use("/", apiRouter);
-// app.use(staticFiles);
+app.use("/users", apiRouter);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 app.set('port', (process.env.PORT || 3001));
 app.listen(app.get('port'), () => {
