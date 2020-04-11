@@ -22,4 +22,6 @@ This project is hosted on https://stormy-meadow-64978.herokuapp.com.
 # :tada:
 
 ## Duplicate From Scratch
-This section is currently under construction :building_construction:
+This section is currently under construction 
+
+# :building_construction:
