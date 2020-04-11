@@ -11,8 +11,8 @@ This project is hosted on https://stormy-meadow-64978.herokuapp.com.
 
 ## Install and Run Locally
 1. Clone this repo  
-    Via HTTPS:  `git clone `https://github.com/sdhani/crea-postgres-heroku.git`
-    Via SSH: `git@github.com:sdhani/crea-postgres-heroku.git`
+    - Via HTTPS:  `git clone `https://github.com/sdhani/crea-postgres-heroku.git`
+    - Via SSH: `git@github.com:sdhani/crea-postgres-heroku.git`
 2. `cd crea-postgres-heroku`
 3. Run `yarn install` in root directory.
 4. `cd client`
