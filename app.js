@@ -10,7 +10,7 @@ const app = express();
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// const apiRouter = require("./routes/users");
+const apiRouter = require("./routes/users");
 
 app.use(logger('dev'));
 app.use(express.json());
