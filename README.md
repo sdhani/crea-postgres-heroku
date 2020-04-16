@@ -10,14 +10,15 @@ This project is hosted on https://stormy-meadow-64978.herokuapp.com.
 2. If you navigate to `https://stormy-meadow-64978.herokuapp.com/allusers`, this renders the React component Homepage.jsx with data pulled in from the PostgreSQL database.
 
 ## Install and Run Locally
-1. Clone this repo  
-    - Via HTTPS:  `git clone `https://github.com/sdhani/crea-postgres-heroku.git`
-    - Via SSH: `git@github.com:sdhani/crea-postgres-heroku.git`
+1. Clone this repository.
+    
+    HTTPS:  `git clone https://github.com/sdhani/crea-postgres-heroku.git`
+    
+    SSH: `git@github.com:sdhani/crea-postgres-heroku.git`
+    
 2. `cd crea-postgres-heroku`
-3. Run `yarn install` in root directory.
-4. `cd client`
-5. Run `yarn install` in client directory.
-6. `cd ..`. In root directory, run `yarn start-all`. This will concurrently start the server and create react app.
+3. Run `yarn install-all` in the root directory.
+6. Run `yarn start-all` in the root directory. This will concurrently start the server and create react app.
 7. Open `http://localhost:3000` in your browser.
 # :tada:
 
