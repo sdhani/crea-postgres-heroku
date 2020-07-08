@@ -32,16 +32,14 @@ module.exports = {
 
   update(username, id, content, completed){
     const user_id = knex('users').select('id').where('username', username);
-    // const validateUser = knex('todo').join('users', 'todo.user_id', '=', 'users.id').where('todo.user_id', user_id).where('todo.id', id);
-    return knex('todo')
+      return knex('todo')
       .where('id', id)
       .update({content: content, completed: completed});
   },
 
   delete(username, id) {
     const user_id = knex('users').select('id').where('username', username);
-    // const validateUser = knex('todo').join('users', 'todo.user_id', '=', 'users.id').where('todo.user_id', user_id).where('todo.id', id);
-    return knex('todo')
+      return knex('todo')
       .join('users', 'todo.user_id', '=', 'users.id')
       .where('todo.user_id', user_id)
       .where('todo.id', id)
