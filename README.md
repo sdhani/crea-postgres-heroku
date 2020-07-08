@@ -9,7 +9,7 @@ This project is hosted on https://stormy-meadow-64978.herokuapp.com.
 1. It renders a plain React App. Landing Page loads `App.js rendered` from the React component App.js.
 2. If you navigate to `https://stormy-meadow-64978.herokuapp.com/allusers`, this renders the React component Homepage.jsx with data pulled in from the PostgreSQL database.
 
-## Install and Run Locally
+## Install
 1. Clone this repository.
     
     HTTPS:  `git clone https://github.com/sdhani/crea-postgres-heroku.git`
@@ -20,7 +20,6 @@ This project is hosted on https://stormy-meadow-64978.herokuapp.com.
 3. Run `yarn install-all` in the root directory.
 6. Run `yarn start-all` in the root directory. This will concurrently start the server and create react app.
 7. Open `http://localhost:3000` in your browser.
-# :tada:
 
 ## Duplicate From Scratch
 This section is currently under construction 
